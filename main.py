@@ -2,9 +2,7 @@ from multiprocessing.spawn import get_command_line
 import discord
 from discord.ext import commands
 import random
-from botmem import mem
 import os 
-from botgif import gif
 
 smiles1 = [':wave:', ':grinning:',':handshake:']
 smiles2 = [':wave:', ':saluting_face:' ,':call_me:']
@@ -70,6 +68,18 @@ async def  division(ctx, left: int, right: int):
 @bot.command()
 async def helper(ctx):
     await ctx.send(all_comands)
+
+@bot.command()
+async def gif(ctx):
+    with open('allgif/gif1.gif', 'rb') as f:
+        gifka = discord.File(f)
+    await ctx.send(file=gifka)
+
+@bot.command()
+async def mem(ctx):
+    with open('images/mem1.jpg', 'rb') as f:
+        picture = discord.File(f)
+    await ctx.send(file=picture)
 
 
 
