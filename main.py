@@ -18,6 +18,7 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 all_comands = ['$hello - приветствие', '$bye - прощание', '$heh (число) - отправляет смех хех', 'gen_pass (число) - генерирует пароль который ты хочешь', '$add(число + число) - скалдывает написанные числа', 
            '$multiplication(число * число) - умножает написанные числа', '$subtraction(число - число) - вычитает написанные числа', '$division(число ÷ число) - делит написанные числа']
 
+
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')
@@ -77,10 +78,11 @@ async def gif(ctx):
 
 @bot.command()
 async def mem(ctx):
-    with open('images/mem1.jpg', 'rb') as f:
+    mems_list = os.listdir('images')
+    random_mem = random.choice(mems_list)
+    with open(f'images/{random_mem}', 'rb') as f:
         picture = discord.File(f)
     await ctx.send(file=picture)
-
 
 
 
