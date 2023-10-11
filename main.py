@@ -20,10 +20,19 @@ all_comands = ['$hello - приветствие', '$bye - прощание', '$h
            '$multiplication(число * число) - умножает написанные числа', '$subtraction(число - число) - вычитает написанные числа', '$division(число ÷ число) - делит написанные числа',
            '$mem - присылает мем', '$gif - присылает гифку', '$duck - присылает картинку или гифку с уткой', '$dog - присылает картинку или гифку с собакой']
 
+check = 0
 
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+    await message.channel.send("Пропиши команду $helper чтобы узнать на что я реагирую!")
+    await bot.process_commands(message)
+
 
 
 @bot.command()
@@ -114,8 +123,13 @@ async def dog(ctx):
     '''По команде cat вызывает функцию get_cat_image_url'''
     image_url = get_dog_image_url()
     await ctx.send(image_url)
-
-
+@bot.command()
+async def cat(ctx):
+    url ='https://api.thecatapi.com/v1/images/search'
+    res = requests.get(url)
+    print(res.json())
+    img = res.json()[0]['url']
+    await ctx.send(img)
 
 
 bot.run("Token")
