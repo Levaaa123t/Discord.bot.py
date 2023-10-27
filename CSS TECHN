@@ -1,0 +1,45 @@
+body {
+    font-family: Comic sans-serif; /* Семейство шрифтов */
+    font-size: 16px; /* Размер основного шрифта в <p></p>  */
+    background-color: #ffffff; /* Цвет фона веб-страницы */
+    color: #4f4f4fcc; /* Цвет основного текста */ 
+}
+h1 {
+    color: #000000; /* Цвет заголовка */
+    font-size: 24px; /* Размер шрифта в пунктах */
+    font-family: comic sans-serif, serif; /* Семейство шрифтов */
+}
+li{
+    color:#359cb1;
+    font-size: 16px
+}
+.p4{
+    font-size: 22;
+}
+.p6{
+    font-size: 20;
+}
+.p2{
+    font-size: 20;
+}
+.p3{
+    font-size: 20;
+    position: absolute;
+    top: 1470px;
+    left:800px;
+}
+.iframe1{
+    position:absolute;
+    top: 1070px ;
+    left: 500px;
+}
+.iframe2{
+    position: absolute;
+    top:1070px;
+    left:900px;
+}
+.iframe3{
+    position: absolute;
+    top:1540px;
+    left: 800px;
+}
